@@ -1,0 +1,19 @@
+#!/bin/bash
+cd /home/jw/src/crewai/crewai-blogs
+conda develop /home/jw/src/crewai/lib
+conda develop /home/jw/src/crewai/crewai-blogs
+rm k-*
+clear
+GPUMEMCLEAR
+. ~/src/crewai/lib/SETENV
+echo "Start..."
+#./blogger.py "Building AI Agents in python with CrewAI" 
+# ./blogger_v0.py "${1}" 
+time ./blogger_v0.py "${1}"
+#  --server OLLAMA \
+#  --daterange "1 month ago:today"
+
+#time ./blogger_v0.py \
+#  --topic "${1}" \
+#  --server OLLAMA \
+#  --daterange "1 month ago:today"
