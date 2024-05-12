@@ -13,3 +13,15 @@ tensorlfow.md
 youtube-transcript.py
 ytblogger.py
 .$crewai.drawio.bkp
+
+
+.directory
+.idea/
+OLLAMA.log
+ai.md
+configs/
+crewai-blogs.code-workspace
+db/
+out.log
+x
+
