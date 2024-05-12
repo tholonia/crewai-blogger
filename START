@@ -21,7 +21,7 @@ echo "Start..."
 
 #onle needed during dev/debugging as ollama tends to stay hot after a ^c
 echo "Stopping Ollama (slow if hot)"
-sudo systemctl stop ollama
+#sudo systemctl stop ollama
 #echo "Starting Ollama"
 #sudo systemctl start ollama
 

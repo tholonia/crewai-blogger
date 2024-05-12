@@ -1,3 +1,27 @@
+┌────────────────────────────────────────────────────────────
+│ Runtime Stats
+└────────────────────────────────────────────────────────────
+        LLM_config: OPENAI
+        Server:     https://api.openai.com/v1
+        Model:      gpt-4-1106-preview (only valid for 'OPENAI' config)
+        Runtime:    210 secs
+
+    Current versions
+        langchain           0.1.13
+        langchain_community 0.0.38
+        crewai              0.30.0
+        crewai_tools        0.2.5
+        Python              3.11.9 | packaged by conda-forge | (main, Apr 19 2024, 18:36:13) [GCC 12.3.0]
+        System              Linux 6.1.0-18-amd64
+
+    Env vars
+        OPENAI_API_KEY      sk-proj-xxx
+        OPENAI_API_BASE_URL https://api.openai.com/v1
+        OPENAI_MODEL_NAME   gpt-4-1106-preview
+
+Synopsis:
+Runs OK, just to big for OpenAI limits
+------------------------------------------------------------------------
 
  [DEBUG]: == Working Agent: Internet Research
  [INFO]: == Starting Task: 
