@@ -49,10 +49,6 @@ file_writer = FileWriterTool()
 
 llm         = False
 
-
-# ╔═════════════════════════════════════════════════════════════ !c
-# ║ Exa Search Tools Class
-# ╚═════════════════════════════════════════════════════════════
 def run_crew(topic):
     # ┌──────────────────────────────────────────────────────────── !g
     # │ AGENT: researcher
@@ -109,7 +105,7 @@ def run_crew(topic):
                 content that can be used for blogging. This content should be well organized, and 
                 should be very easy to read. Set the input parameter as:search_query
             """),
-            expected_output = "A comprehensive 10000 words information about {topic}.",
+            expected_output = f"A comprehensive 10000 words information about {topic}.",
             max_inter = 3,
             output_file = "k-task-search.md",
             agent = researcher,
@@ -137,7 +133,7 @@ def run_crew(topic):
                 readers. Also explain the concepts, architecture in detail. Once the blog is created, 
                 create a new file called blog.md, and save the blog in that file.
             """),
-            expected_output = "A comprehensive 20 paragraph blog on {topic} in markdown format.",
+            expected_output = f"A comprehensive 20 paragraph blog on {topic}.",
             output_file = "k-task-post.md",
             agent = blogger,
         )

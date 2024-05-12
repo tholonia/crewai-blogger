@@ -1,9 +1,14 @@
-crewai
+crewai~=0.30.0
 crewai-tools
 duckduckgo-search
-python-dotenv
+python-dotenv~=1.0.0
 langchain-community
 langchain_openai
 streamlit
 youtube-transcript-api
 youtube-dl
+colorama~=0.4.6
+langchain~=0.1.13
+python-dateutil~=2.8.2
+langsmith~=0.1.31
+colorama

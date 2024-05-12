@@ -1,19 +1,44 @@
 #!/bin/bash
-cd /home/jw/src/crewai/crewai-blogs
-conda develop /home/jw/src/crewai/lib
-conda develop /home/jw/src/crewai/crewai-blogs
+
+cd ${HOME}/src/crewai/crewai-blogs
+#    RUN FIRST, ONLY ONCE#
+#    make sure these libs are in the conda env
+#conda develop /home/jw/src/crewai/lib
+#    make sure the crewia lib folder is mounted locally
+#sudo mount --bind ${HOME}/src/crewai/lib ${HOME}/src/crewai/crewai-blogs/lib
+
+# delete all previous work output files
 rm k-*
 clear
-GPUMEMCLEAR
-. ~/src/crewai/lib/SETENV
-echo "Start..."
-#./blogger.py "Building AI Agents in python with CrewAI" 
-# ./blogger_v0.py "${1}" 
-time ./blogger_v0.py "${1}"
-#  --server OLLAMA \
-#  --daterange "1 month ago:today"
 
-#time ./blogger_v0.py \
+# clear everythign from the GPU
+GPUMEMCLEAR
+
+# set env vars (don;t depend on dotenv!)
+#source lib/SETENV
+
+echo "Start..."
+
+#onle needed during dev/debugging as ollama tends to stay hot after a ^c
+echo "Stopping Ollama (slow if hot)"
+sudo systemctl stop ollama
+#echo "Starting Ollama"
+#sudo systemctl start ollama
+
+
+# version 0ORG- original
+#./bloggerORG.py "epigenetics" 2>&1
+
+# version 0 - simplest version
+./blogger_v0.py "epigenetics" 2>&1
+
+#run from terminal to save buffer as log
+
+#   xsel -o > OLLAMA.log
+
+
+# version 1... not working yet
+#time ./blogger_v1.py \
 #  --topic "${1}" \
 #  --server OLLAMA \
 #  --daterange "1 month ago:today"

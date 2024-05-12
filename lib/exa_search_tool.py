@@ -6,14 +6,14 @@ from crewai_tools import tool, EXASearchTool
 from exa_py import Exa
 import os
 import gvars as g
+import dotenv
+
+dotenv.load_dotenv(dotenv_path=g.crew_env_file)
 # ╔═════════════════════════════════════════════════════════════
 # ║ Exa Search Tools Class
 # ╚═════════════════════════════════════════════════════════════
 
 class ExaSearchTool:
-    # def __init__(self, from_date:str, to_date:str) -> None:
-    #     self.from_date = f"{from_date}T00:00"
-    #     self.to_date = f"{to_date}T00:00"
     @tool
     def search(query: str):
         """Search for a webpage based on the query."""

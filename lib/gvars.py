@@ -1,6 +1,6 @@
-verbose = False
-verboseN = 0
-crew_env = "/home/jw/src/crewai/lib/.env"
+verbose = True
+verboseN = 2
+crew_env_file = "lib/.env"
 counter = 1
 memory = False
 server = "OLLAMA"
@@ -18,6 +18,20 @@ def set_project_name(pname):
     f.close()
     return f"{pname}_{pn}"
 
+
+def get_versions(dir_vars):
+    print(dir_vars)
+    exit()
+    # import top libs for versions output
+    from importlib.metadata import version
+
+    plist = {}
+    for pp in dir_vars:
+        try:
+            plist[pp] = version(pp)
+        except:
+            pass
+    return plist
 
 # def trace(func):
 #     @functools.wraps(func)
